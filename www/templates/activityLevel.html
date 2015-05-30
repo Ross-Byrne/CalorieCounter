@@ -1,0 +1,38 @@
+<!--
+		Page to let the user select their activity level
+-->
+
+<ion-view view-title="Activity Level">
+	<ion-nav-bar class="bar-positive">
+			Select Your Activity Level
+	</ion-nav-bar>
+	<ion-content>
+		<!-- Display Activity Levels -->
+		<ion-radio ng-model="user.activityLevel" ng-value="1.2">
+			<label class="item-text-wrap">{{activityLevels.option1}}</label>
+		</ion-radio>
+		
+		<ion-radio ng-model="user.activityLevel" ng-value="1.375">
+			<label class="item-text-wrap">{{activityLevels.option2}}</label>
+		</ion-radio>
+		
+		<ion-radio ng-model="user.activityLevel" ng-value="1.55">
+			<label class="item-text-wrap">{{activityLevels.option3}}</label>
+		</ion-radio>
+		
+		<ion-radio ng-model="user.activityLevel" ng-value="1.725">
+			<label class="item-text-wrap">{{activityLevels.option4}}</label>
+		</ion-radio>
+		
+		<ion-radio ng-model="user.activityLevel" ng-value="1.9">
+			<label class="item-text-wrap">{{activityLevels.option5}}</label>
+		</ion-radio>
+		
+		<!-- select Activity Level -->
+		<div style="padding: 1%">
+			<button class="button button-full button-positive" ng-click="goBack()">
+				Select Activity Level
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

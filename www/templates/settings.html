@@ -1,0 +1,53 @@
+<!-- 	
+		This is the settings page for the app.
+		On this page the user can view their
+		current details and select to edit them.
+-->
+
+<ion-view view-title="Settings">
+	
+	<!-- Edit button in top right corner for enabling the editing of user info -->
+	<ion-nav-buttons side="right">
+        <button class="button button-clear" ui-sref="app.updateDetails">
+			  Edit
+        </button>
+      </ion-nav-buttons>
+	
+	<ion-content>
+		<!-- Displaying Users Current Details -->
+		<div class="item item-divider"> 
+          <span style="font-size: 100%">User Details</span>
+	  	</div>
+		
+		<!-- Display user's information for viewing -->
+		<ul class="list">
+    		<li class="item">
+				<b>Name:</b> <span style="font-size: 90%">{{user.name}}</span>
+    		</li>
+			<li class="item">
+				<b>Gender:</b> <span style="font-size: 90%">{{user.gender}}</span>
+    		</li>
+			<li class="item">
+				<b>Weight In KG:</b> <span style="font-size: 90%">{{user.weightKG}}</span>
+    		</li>
+			<li class="item">
+				<b>Height In CM:</b> <span style="font-size: 90%">{{user.heightCM}}</span>
+    		</li>
+			<li class="item">
+				<b>Age In Years:</b> <span style="font-size: 90%">{{user.ageInYears}}</span>
+    		</li>
+			<li class="item item-text-wrap">
+				<b>Activity Level:</b> <span style="font-size: 90%">{{userActivityLevel}}</span>
+    		</li>
+			
+		</ul>
+		
+		<!-- Delete button to delete all user information -->
+		<div style="padding: 1%">
+			<button class="button button-full button-positive" ng-click="showConfirm()">
+				Delete All User Details
+			</button>
+		</div>
+		
+	</ion-content>
+</ion-view>

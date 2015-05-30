@@ -1,0 +1,79 @@
+<!-- 	
+		This is the Update Details page for the app.
+		On this page the user can update their
+		current details.
+-->
+
+<ion-view view-title="Update">
+	
+	<!-- Edit button in top right corner is disabled during editing -->
+	<ion-nav-buttons side="right">
+	  <button class="button button-clear" ng-disabled="true" >
+		  Edit
+	  </button>
+	</ion-nav-buttons>
+	
+	<ion-content>	
+		<div class="list">
+			
+			<!-- User's Name -->
+			<div class="item item-divider"> 
+				Name: <span style="font-size: 90%">{{user.name}}</span>
+	  		</div>
+			<!-- Input for Users Name -->
+  			<label class="item item-input">
+    			<input type="text" placeholder="Name" ng-model="user.name">
+  			</label>
+			
+			<!-- User's Gender -->
+			<div class="item item-divider"> 
+				Gender: <span style="font-size: 90%">{{user.gender}}</span>
+	  		</div>
+			<!-- Radio buttons for selecting users gender -->
+			<ion-radio ng-model="user.gender" ng-value="'Male'">Male</ion-radio>
+			<ion-radio ng-model="user.gender" ng-value="'Female'">Female</ion-radio>
+			
+			<!-- Weight in KG -->
+			<div class="item item-divider"> 
+				Weight In KG: <span style="font-size: 90%">{{user.weightKG}}</span>
+	  		</div>
+			<!-- Input for Users weight in KG -->
+  			<label class="item item-input" >
+    			<input type="number" placeholder="Weight In KG" ng-model="user.weightKG">
+  			</label>
+			
+			<!-- Height in CM -->
+			<div class="item item-divider"> 
+				Height In CM: <span style="font-size: 90%">{{user.heightCM}}</span>
+	  		</div>
+			<!-- Input for Users Height in CM -->
+  			<label class="item item-input" >
+    			<input type="number" placeholder="Height In CM" ng-model="user.heightCM">
+  			</label>
+			
+			<!-- Age in years -->
+			<div class="item item-divider"> 
+				Age In Years: <span style="font-size: 90%">{{user.ageInYears}}</span>
+	  		</div>
+			<!-- Input for Users Age in years -->
+  			<label class="item item-input">
+    			<input type="number" placeholder="Age In Years" ng-model="user.ageInYears">
+  			</label>
+			
+			<!-- Activity Level -->
+			<div class="item item-divider"> 
+				Activity Level:
+	  		</div>
+			<label class="item item-input item-text-wrap" style="padding-top: 2%; padding-bottom: 2%" ng-click="goToActivityLevel()">
+				Activity Level: {{userActivityLevel}}
+			</label>
+	  
+			<!-- Submit button to update details -->
+			<div style="padding: 1%">
+				<button class="button button-full button-positive" ng-click="updateDetails()" ui-sref="app.settings">
+					Update Details
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
