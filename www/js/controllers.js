@@ -37,7 +37,7 @@ angular.module('Calorie Counter.controllers', ['Calorie Counter.services'])
 .controller('CalorieCtrl', function($scope, $localstorage, $state, $ionicHistory, $ionicPopup) {
 	// variables
 	// array of food objects 
-	$scope.foodItems = [];
+	$scope.foodItems = [{}];
 	
 	// functions to be fired when the view is the active view
 	$scope.$on("$ionicView.beforeEnter", function(){
@@ -63,14 +63,12 @@ angular.module('Calorie Counter.controllers', ['Calorie Counter.services'])
 	});
 	
 	// function for adding a new food Item
-	// Ionic is being buggy, this funtion wont work 
-	// if I try do anymore in it
-	$scope.addNewFoodItem = function(){
-		var cals = 100;
+	$scope.addNewFoodItem = function(food, cals){
+		
 		// add calories to calsConsumed
 		$scope.user.calsConsumed += cals;
 		
-		$scope.foodItems.push({name: "Bread", calories: cals});
+		$scope.foodItems.push({name: food, calories: cals});
 	} // addNewFoodItem()
 	
 	// function for saving and exiting from the calorie page
