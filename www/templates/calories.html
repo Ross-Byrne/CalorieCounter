@@ -6,7 +6,7 @@
 			naming your own foods
 -->
 
-<ion-view  view-title="Calories" ng-init="Food = 'tea'; Caleries = 300">
+<ion-view  view-title="Calories" ng-init="Food = 'Tea, Whole Milk'; Caleries = 22">
 	
 	<!-- Add button for adding a new food Item -->
 	<ion-nav-buttons side="right">
@@ -19,15 +19,28 @@
 		
 		<!-- Heading -->
 		<div class="item item-divider"> 
-          <span style="font-size: 100%">Food Items</span>
-	  	</div>
+			<div class="row">
+				<div class="col col-50">Name</div>
+				<div class="col col-50">Calories</div>
+			</div>
+		</div>
 		
 		<!-- Display food items -->
-		<ul class="list">
-    		<li class="item" ng-repeat="foodItem in foodItems">
-				<b>{{foodItem.name}}</b><br/> <b>Calories:</b> {{foodItem.calories}}
-    		</li>
-		</ul>
+		<ion-list>
+			<ion-item class="item-icon-left" ng-repeat="foodItem in foodItems">
+				<div class="row">
+					<!-- Food Name -->
+					<div class="col col-50">
+						<i class="icon ion-fork"></i>
+						<label class="item-text-wrap">{{foodItem.name}}</label>
+					</div>
+					<!-- Food Calories -->
+					<div class="col col-50">
+						<label class="item-text-wrap">{{foodItem.calories}}</label>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
 		
 		<!-- Save edited food items -->
 		<div style="padding: 1%">
