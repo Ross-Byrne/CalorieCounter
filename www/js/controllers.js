@@ -37,7 +37,7 @@ angular.module('Calorie Counter.controllers', ['Calorie Counter.services'])
 .controller('CalorieCtrl', function($scope, $localstorage, $state, $ionicHistory, $ionicPopup) {
 	// variables
 	// array of food objects 
-	$scope.foodItems = [{}];
+	$scope.foodItems;
 	
 	// functions to be fired when the view is the active view
 	$scope.$on("$ionicView.beforeEnter", function(){
@@ -63,12 +63,12 @@ angular.module('Calorie Counter.controllers', ['Calorie Counter.services'])
 	});
 	
 	// function for adding a new food Item
-	$scope.addNewFoodItem = function(food, cals){
+	$scope.addNewFoodItem = function(i, food, cals){
 		
 		// add calories to calsConsumed
 		$scope.user.calsConsumed += cals;
 		
-		$scope.foodItems.push({name: food, calories: cals});
+		$scope.foodItems.push({icon: i, name: food, calories: cals});
 	} // addNewFoodItem()
 	
 	// function for saving and exiting from the calorie page

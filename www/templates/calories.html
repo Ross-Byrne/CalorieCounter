@@ -6,11 +6,11 @@
 			naming your own foods
 -->
 
-<ion-view  view-title="Calories" ng-init="Food = 'Tea, Whole Milk'; Caleries = 22">
+<ion-view  view-title="Calories" ng-init="Icon = 'ion-fork'; Food = 'Tea, Whole Milk'; Caleries = 22">
 	
 	<!-- Add button for adding a new food Item -->
 	<ion-nav-buttons side="right">
-        <button class="button button-clear" ng-click="addNewFoodItem(Food, Caleries)">
+        <button class="button button-clear" ng-click="addNewFoodItem(Icon, Food, Caleries)">
 			  Add
         </button>
 	</ion-nav-buttons>
@@ -31,7 +31,7 @@
 				<div class="row">
 					<!-- Food Name -->
 					<div class="col col-50">
-						<i class="icon ion-fork"></i>
+						<i class="icon {{foodItem.icon}}"></i>
 						<label class="item-text-wrap">{{foodItem.name}}</label>
 					</div>
 					<!-- Food Calories -->
